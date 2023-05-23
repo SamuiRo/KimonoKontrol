@@ -10,14 +10,18 @@ async function bot_launch() {
 }
 
 async function send_message(chat_id, content) {
-    const config = {
-        chat_id: chat_id,
-        text: content
+    try {
+        const config = {
+            chat_id: chat_id,
+            text: content
+        }
+
+        const url = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`
+
+        await axios.post(url, config)
+    } catch (error) {
+        console.log(error)
     }
-
-    const url = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`
-
-    await axios.post(url, config)
 }
 
 async function update_message(text, message_id) {
