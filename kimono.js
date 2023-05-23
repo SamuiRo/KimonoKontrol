@@ -16,7 +16,7 @@ async function START() {
 async function update_steam_status() {
     setInterval(async () => {
         const stats = await Stats.stats_api()
-
+        let date = new Date()
         const message =
             "━━ Services ━━━━━━━━━━━━━━━" + "\n" +
             "Online: " + stats["online"] + "\n" +
@@ -35,7 +35,7 @@ async function update_steam_status() {
             "TF2 Coordinator: " + stats["tf2"] + "\n" +
             "" + "" + "\n" +
             "━━ Update ━━━━━━━━━━━━━━━━━" + "" + "\n" +
-            "" + localeDate() + "" + "\n"
+            date.toUTCString() + "" + "\n"
 
         await Telegram.update_message(message, 4)
     }, 300000)
