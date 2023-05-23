@@ -1,7 +1,6 @@
 const Telegram = require("./bots/telegram")
 const { intro } = require("./awesome/message")
 const Stats = require("./bots/stats")
-const { localeDate } = require("./shared/utility")
 
 async function START() {
     try {
@@ -26,7 +25,6 @@ async function update_steam_status() {
             "Web API: " + stats["webapi"] + "\n" +
             "Connection Managers: " + stats["cms"] + "\n" +
             "" + "" + "\n" +
-            "123456789012345678901234567890" + "\n" +
             "CSGO Coordinator: " + stats["csgo"] + "\n" +
             "CSGO SessionsLogon: " + stats["csgo_sessions"] + "\n" +
             "CSGO Inventories: " + stats["csgo_community"] + "\n" +
